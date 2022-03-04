@@ -1,4 +1,4 @@
-import 'package:final_sem_project/home.dart';
+import 'package:final_sem_project/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
@@ -59,7 +59,7 @@ class OnboardingScreen extends StatelessWidget {
   );
 
   void goToHome(context) => Navigator.of(context).pushReplacement(
-    MaterialPageRoute(builder: (_) => HomeScreen()),
+    MaterialPageRoute(builder: (_) => LoginScreen()),
   );
 
   Widget buildImage(String path) =>

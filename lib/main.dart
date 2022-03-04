@@ -1,3 +1,5 @@
+import 'package:final_sem_project/screens/login_screen.dart';
+import 'package:final_sem_project/screens/registration_screen.dart';
 import 'package:final_sem_project/splash.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Telemedicine',
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+      ),
       home: Splash(),
     );
   }
