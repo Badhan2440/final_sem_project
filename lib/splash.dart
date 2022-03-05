@@ -34,7 +34,7 @@ class _SplashState extends State<Splash>{
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/doctor.png'),
+                Image.asset('assets/logo.png'),
                 SizedBox(height: 4),
                 Text(
                   "ELDOC",

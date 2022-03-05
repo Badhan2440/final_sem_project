@@ -37,6 +37,12 @@ dependencies:
   animated_splash_screen: ^1.2.0
   introduction_screen: ^3.0.0
   google_fonts: ^2.3.1
+  cloud_firestore: ^3.1.10
+  firebase_auth: ^3.3.9
+  firebase_core: ^1.13.1
+  fluttertoast: ^8.0.9
+  fireflutter: ^0.2.12
+  flutter_application_id: ^1.0.0
 
 
 
