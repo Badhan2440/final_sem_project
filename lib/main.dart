@@ -1,3 +1,4 @@
+import 'package:final_sem_project/screens/home_screen.dart';
 import 'package:final_sem_project/screens/login_screen.dart';
 import 'package:final_sem_project/screens/registration_screen.dart';
 import 'package:final_sem_project/splash.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: Splash(),
+      home: HomeScreen(),
     );
   }
 }

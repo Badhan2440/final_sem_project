@@ -44,10 +44,10 @@ class OnboardingScreen extends StatelessWidget {
         ),
       ],
 
-      done: Text('SKIP', style: TextStyle(fontWeight: FontWeight.w600, color: Colors.redAccent),),
+      done: Text('NEXT', style: TextStyle(fontWeight: FontWeight.w600, color: Colors.redAccent),),
       onDone: () => goToHome(context),
       showSkipButton: true,
-      skip: Text('Skip', style: TextStyle(color: Colors.redAccent),),
+      skip: Text('SKIP', style: TextStyle(color: Colors.redAccent),),
       onSkip: () => goToHome(context),
       next: Icon(Icons.arrow_forward, color: Colors.redAccent,),
       dotsDecorator: getDotDecoration(),
