@@ -34,12 +34,14 @@ class _SplashState extends State<Splash>{
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/logo.png'),
+                Image.asset('assets/symbol.png'),
                 SizedBox(height: 4),
                 Text(
                   "ELDOC",
                   style: TextStyle(
-                    fontSize: 34, fontWeight: FontWeight.bold, color: Colors.redAccent,
+                    fontSize: 34,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.redAccent,
                   ),
 
                 ),

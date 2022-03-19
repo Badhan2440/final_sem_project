@@ -1,112 +1,76 @@
+import 'package:final_sem_project/components/card_catagory.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import '../components/catagory_card.dart';
-import '../components/search_bar.dart';
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
 
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(
-        bottom: false,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: ListView(
+          padding: EdgeInsets.fromLTRB(24, 30, 24, 30),
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween ,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(Icons.menu, color: Colors.redAccent),
-                    Icon(Icons.account_circle_rounded, color: Colors.redAccent),
+                    Image.asset(
+                      'h1.png',
+                      width: 50,
+                    ),
+                    SizedBox(height: 5,),
+                    Text("Find a medicine or\nvitamins with ELDOC",
+                      style: TextStyle(fontSize: 15, color: Colors.white) ,
+                    )
                   ],
                 ),
+                IconButton(
+                    onPressed:(){},
+                    icon: Icon(
+                      Icons.shopping_cart_rounded,
+                      color: Colors.redAccent,
+                    )
+                )
+              ],
+            ),
+            SizedBox(height: 20,),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 16,vertical: 6),
+              height: 55,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.redAccent,
               ),
-              SizedBox(height: 50,),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20,),
-                child: Text(
-                  'Find Your Desired Doctor',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                      color: Colors.white,
+              child: TextField(
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: Colors.black,
                   ),
-
+                  hintText: "Search medicine...",
+                  hintStyle: TextStyle(color: Colors.black)
                 ),
               ),
-              SizedBox(
-                height: 30,
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: SearchBar(),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: Text(
-                  'Categories',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.red,
-                    fontSize: 18,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              buildCategoryList(),
-            ],
-          ),
+            ),
+            SizedBox(height: 30,),
+            Text("Medicine & Services by Catagory",
+              style: TextStyle(fontSize: 16,color: Colors.white),
+            ),
+            CardCatagory(),
+          ],
         ),
-      ),
-    );
-  }
-
-
-
-  buildCategoryList() {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: <Widget>[
-          SizedBox(
-            width: 30,
-          ),
-          CategoryCard(
-            'Dental\nSurgeon',
-            'assets/dentist.png',
-            Colors.blue,
-          ),
-          SizedBox(
-            width: 10,
-          ),
-          CategoryCard(
-            'Heart\nSurgeon',
-            'assets/icons/heart_surgeon.png',
-            Colors.yellow,
-          ),
-          SizedBox(
-            width: 10,
-          ),
-          CategoryCard(
-            'Eye\nSpecialist',
-            'assets/icons/eye_specialist.png',
-            Colors.orange,
-          ),
-          SizedBox(
-            width: 30,
-          ),
-        ],
-      ),
+      )
     );
   }
 }
