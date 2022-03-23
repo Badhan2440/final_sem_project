@@ -1,4 +1,5 @@
 import 'package:final_sem_project/components/card_catagory.dart';
+import 'package:final_sem_project/components/card_product.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -67,10 +68,11 @@ class _HomePageState extends State<HomePage> {
             Text("Medicine & Services by Catagory",
               style: TextStyle(fontSize: 16,color: Colors.white),
             ),
-            CardCatagory(),
+            CardCatagory(imageCatagory: "assets/vitamins.png", nameCatagory: 'VITAMINS',),
           ],
         ),
       )
     );
   }
 }
+

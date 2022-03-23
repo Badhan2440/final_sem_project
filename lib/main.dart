@@ -1,3 +1,4 @@
+import 'package:final_sem_project/item_details.dart';
 import 'package:final_sem_project/screens/home_screen.dart';
 import 'package:final_sem_project/screens/login_screen.dart';
 import 'package:final_sem_project/screens/main_page.dart';
@@ -5,6 +6,8 @@ import 'package:final_sem_project/screens/registration_screen.dart';
 import 'package:final_sem_project/splash.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+
+import 'dashbord_screen.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,7 +32,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: Splash(),
+      home: ItemDetailsPage(),
     );
   }
 }
