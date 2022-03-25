@@ -55,6 +55,127 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
                   bottomRight: Radius.circular(30),
                 )
               ),
+
+
+
+              child: Container(
+                margin: EdgeInsets.only(left: 30, bottom: 30),
+                child: Row(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(bottom: 20),
+                      child: Image.asset(" "),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 20),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(top: 20),
+                            child: Text(
+                              "Dr. Jahangir Alam",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 22,
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ),
+                          ),
+
+                          Container(
+                            margin: EdgeInsets.only(top: 10),
+                            child: Text(
+                              "Heart Surgeon",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ),
+                          ),
+
+
+
+
+                          Container(
+                            margin: EdgeInsets.only(top: 15),
+                            child: Text(
+                              "Rating: 4.5",
+                              style: TextStyle(
+                                color: Colors.redAccent,
+                                fontSize: 22,
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ),
+                          ),
+
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+
+
+
+            Container(
+              margin: EdgeInsets.only(left: 20, top: 30),
+              child: Text(
+                "April 2022",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 25,
+                  fontFamily: "Roboto",
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 20,top: 20,right: 20),
+              height: 90,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    demoDates("Mon","21", true),
+                    demoDates("Tue","22", false),
+                    demoDates("Wed","23", true),
+                    demoDates("Thr","24", false),
+                    demoDates("Fri","25", true),
+                    demoDates("Sat","26", false),
+                  ],
+                ),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 20, top: 30),
+              child: Text(
+                "Morning",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 25,
+                  fontFamily: "Roboto",
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+
+            Container(
+              margin: EdgeInsets.only(right: 20),
+              child: GridView.count(
+                  crossAxisCount: 3,
+                physics: NeverScrollableScrollPhysics(),
+                childAspectRatio: 2.6,
+                children: [
+                  doctorTimings("8:30 AM", true),
+                  doctorTimings("9:30 AM", false),
+                  doctorTimings("10:30 AM", true),
+                  doctorTimings("11:30 AM", false),
+                  doctorTimings("12:30 PM", true),
+                  doctorTimings("13:30 PM", false),
+                ],
+              ),
             )
           ],
         ),
@@ -62,5 +183,173 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
 
 
     );
+  }
+
+
+
+
+  doctorTimings(String time, bool isSelected){
+    return isSelected  ? Container(
+      margin: EdgeInsets.only(left: 20, top: 10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+          borderRadius: BorderRadius.circular(5),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            margin: EdgeInsets.only(right: 2),
+            child: Icon(
+              Icons.access_time,
+              color: Colors.white,
+              size: 18,
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(right: 2),
+            child: Text(
+              time,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 17,
+
+              ),
+            ),
+          )
+        ],
+      ),
+
+
+    ): Container(
+      decoration: BoxDecoration(
+        color: Colors.redAccent,
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            margin: EdgeInsets.only(right: 2),
+            child: Icon(
+              Icons.access_time,
+              color: Colors.redAccent,
+              size: 18,
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(right: 2),
+            child: Text(
+              time,
+              style: TextStyle(
+                color: Colors.redAccent,
+                fontSize: 17,
+
+              ),
+            ),
+          )
+        ],
+      ),
+
+    );
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  demoDates(String day, String date, bool isSelected){
+
+    return isSelected ? Container(
+      width: 70,
+      margin: EdgeInsets.only(right: 15),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            child: Text(
+              day,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 20,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
+          ),
+
+
+          Container(
+            margin: EdgeInsets.only(top: 10),
+            padding: EdgeInsets.all(7),
+            child: Text(
+              date,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 15,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
+          ),
+        ],
+      ),
+    ): Container(
+      width: 70,
+      margin: EdgeInsets.only(right: 15),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            child: Text(
+              day,
+              style: TextStyle(
+                color: Colors.redAccent,
+                fontSize: 20,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
+          ),
+
+
+          Container(
+            margin: EdgeInsets.only(top: 10),
+            padding: EdgeInsets.all(7),
+            child: Text(
+              date,
+              style: TextStyle(
+                color: Colors.redAccent,
+                fontSize: 15,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
+          ),
+        ],
+      ),
+
+    );
+
   }
 }
