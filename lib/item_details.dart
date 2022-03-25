@@ -64,7 +64,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
                   children: [
                     Container(
                       margin: EdgeInsets.only(bottom: 20),
-                      child: Image.asset(" "),
+                      child: Image.asset("assets/mom.jpg"),
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 20),
@@ -126,7 +126,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
               child: Text(
                 "April 2022",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 25,
                   fontFamily: "Roboto",
                   fontWeight: FontWeight.w700,
@@ -141,9 +141,9 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
                   children: [
                     demoDates("Mon","21", true),
                     demoDates("Tue","22", false),
-                    demoDates("Wed","23", true),
+                    demoDates("Wed","23", false),
                     demoDates("Thr","24", false),
-                    demoDates("Fri","25", true),
+                    demoDates("Fri","25", false),
                     demoDates("Sat","26", false),
                   ],
                 ),
@@ -153,7 +153,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
               child: Text(
                 "Morning",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 25,
                   fontFamily: "Roboto",
                   fontWeight: FontWeight.w700,
@@ -164,17 +164,71 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
             Container(
               margin: EdgeInsets.only(right: 20),
               child: GridView.count(
+                shrinkWrap: true,
                   crossAxisCount: 3,
                 physics: NeverScrollableScrollPhysics(),
                 childAspectRatio: 2.6,
                 children: [
                   doctorTimings("8:30 AM", true),
                   doctorTimings("9:30 AM", false),
-                  doctorTimings("10:30 AM", true),
+                  doctorTimings("10:30 AM", false),
                   doctorTimings("11:30 AM", false),
-                  doctorTimings("12:30 PM", true),
+                  doctorTimings("12:30 PM", false),
                   doctorTimings("13:30 PM", false),
                 ],
+              ),
+            ),
+
+
+
+            Container(
+              margin: EdgeInsets.only(left: 20, top: 30),
+              child: Text(
+                "Evening",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 25,
+                  fontFamily: "Roboto",
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+
+            Container(
+              margin: EdgeInsets.only(right: 20),
+              child: GridView.count(
+                shrinkWrap: true,
+                crossAxisCount: 3,
+                physics: NeverScrollableScrollPhysics(),
+                childAspectRatio: 2.6,
+                children: [
+                  doctorTimings("8:30 AM", true),
+                  doctorTimings("9:30 AM", false),
+                  doctorTimings("10:30 AM", false),
+                  doctorTimings("11:30 AM", false),
+                  doctorTimings("12:30 PM", false),
+                  doctorTimings("13:30 PM", false),
+                ],
+              ),
+            ),
+
+
+            Container(
+              alignment: Alignment.center,
+              width: MediaQuery.of(context).size.width,
+              height: 50,
+              margin: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.redAccent,
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Text(
+                "Make an Appointment",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal,
+                ),
               ),
             )
           ],
@@ -188,11 +242,15 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
 
 
 
+
+
+
+
   doctorTimings(String time, bool isSelected){
     return isSelected  ? Container(
       margin: EdgeInsets.only(left: 20, top: 10),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.redAccent,
           borderRadius: BorderRadius.circular(5),
       ),
       child: Row(
@@ -223,8 +281,9 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
 
 
     ): Container(
+      margin: EdgeInsets.only(left: 20, top: 10),
       decoration: BoxDecoration(
-        color: Colors.redAccent,
+        color: Colors.black,
         borderRadius: BorderRadius.circular(5),
       ),
       child: Row(
@@ -235,7 +294,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
             margin: EdgeInsets.only(right: 2),
             child: Icon(
               Icons.access_time,
-              color: Colors.redAccent,
+              color: Colors.white,
               size: 18,
             ),
           ),
@@ -244,7 +303,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
             child: Text(
               time,
               style: TextStyle(
-                color: Colors.redAccent,
+                color: Colors.white,
                 fontSize: 17,
 
               ),
@@ -280,7 +339,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
       width: 70,
       margin: EdgeInsets.only(right: 15),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.redAccent,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
@@ -290,7 +349,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
             child: Text(
               day,
               style: TextStyle(
-                color: Colors.black,
+                color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.normal,
               ),
@@ -316,7 +375,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
       width: 70,
       margin: EdgeInsets.only(right: 15),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.black,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
@@ -326,7 +385,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
             child: Text(
               day,
               style: TextStyle(
-                color: Colors.redAccent,
+                color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.normal,
               ),
@@ -340,7 +399,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
             child: Text(
               date,
               style: TextStyle(
-                color: Colors.redAccent,
+                color: Colors.white,
                 fontSize: 15,
                 fontWeight: FontWeight.normal,
               ),
