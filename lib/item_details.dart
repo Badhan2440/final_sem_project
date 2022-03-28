@@ -62,9 +62,19 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
                 margin: EdgeInsets.only(left: 30, bottom: 30),
                 child: Row(
                   children: [
+                    //Container(
+                    //  margin: EdgeInsets.only(bottom: 20),
+                    //  child: Image.asset("assets/mom.jpg"),
+                    //),
                     Container(
-                      margin: EdgeInsets.only(bottom: 20),
-                      child: Image.asset("assets/mom.jpg"),
+                      width: 100.0,
+                      height: 150.0,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                            fit: BoxFit.cover, image: NetworkImage('assets/mom.jpg')),
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        color: Colors.redAccent,
+                      ),
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 20),
@@ -75,7 +85,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
                           Container(
                             margin: EdgeInsets.only(top: 20),
                             child: Text(
-                              "Dr. Jahangir Alam",
+                              "Dr. Joyanti Rani Paul",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 22,
