@@ -1,3 +1,4 @@
+import 'package:final_sem_project/image%20_recognize.dart';
 import 'package:final_sem_project/item_details.dart';
 import 'package:final_sem_project/screens/home_screen.dart';
 import 'package:final_sem_project/screens/login_screen.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: Dashboard(),
+      home: Splash(),
     );
   }
 }

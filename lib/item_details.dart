@@ -1,3 +1,4 @@
+import 'package:final_sem_project/dashbord_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
         backgroundColor: Colors.black,
         leading: GestureDetector(
           onTap: (){
-            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> Dashboard()));
           },
           child: Icon(
             Icons.arrow_back,

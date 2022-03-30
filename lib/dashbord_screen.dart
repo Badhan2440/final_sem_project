@@ -1,3 +1,4 @@
+import 'package:final_sem_project/image%20_recognize.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -29,9 +30,12 @@ class _DashboardState extends State<Dashboard> {
         ),
         actions: [
           GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> ImageRecognize()));
+            },
             child: Container(
               margin: EdgeInsets.only(right: 10),
-              child: Icon(Icons.notifications_rounded,
+              child: Icon(Icons.camera_alt,
                 color: Colors.black,
               ),
             ),
@@ -39,7 +43,7 @@ class _DashboardState extends State<Dashboard> {
           GestureDetector(
             child: Container(
               margin: EdgeInsets.only(right: 10),
-              child: Image.asset(''),
+              child: Image.asset('assets/pp.jpg'),
             ),
           )
         ]
@@ -184,8 +188,8 @@ class _DashboardState extends State<Dashboard> {
                   demoCatagories('assets/brain.png',"Brain","10 Doctors"),
                   demoCatagories('assets/heart.png',"Heart","10 Doctors"),
                   demoCatagories('assets/bone.png',"Bone","10 Doctors"),
-                  demoCatagories('assets/tooth.png',"eyes","10 Doctors"),
-                  demoCatagories('assets/tooth.png','Skin',"10 Doctors"),
+                  demoCatagories('assets/eye.png',"eyes","10 Doctors"),
+                  demoCatagories('assets/skincare.png','Skin',"10 Doctors"),
                   
 
                   
@@ -245,11 +249,11 @@ class _DashboardState extends State<Dashboard> {
                 margin: EdgeInsets.only(left: 20, right: 20),
                 child: ListView(
                   children: [
-                    demoTopRatedDr(" ","Dr. Jahangir Alam","Heart Surgeon","4.1"),
-                    demoTopRatedDr(" ","Dr. Sakib Al Hasan","Eye Surgeon","4.2"),
-                    demoTopRatedDr(" ","Dr. Mushfiqur rahim","Skin Surgeon","4.3"),
-                    demoTopRatedDr(" ","Dr. Nasir","Nuro Surgeon","4.4"),
-                    demoTopRatedDr(" ","Dr. Al Amin","Dental Surgeon","4.5"),
+                    demoTopRatedDr("assets/mom.jpg","Dr. Joyanti paul","Heart Surgeon","4.1"),
+                    demoTopRatedDr("assets/doctor1.jpg","Dr. Sakib Al Hasan","Eye Surgeon","4.2"),
+                    demoTopRatedDr("assets/doctor2.jpg","Dr. Mushfiqur rahim","Skin Surgeon","4.3"),
+                    demoTopRatedDr("assets/doctor3.jpg","Dr. Nasir","Nuro Surgeon","4.4"),
+                    demoTopRatedDr("assets/doctor4.jpg","Dr. Al Amin","Dental Surgeon","4.5"),
                   ],
                 ),
 
@@ -288,9 +292,6 @@ class _DashboardState extends State<Dashboard> {
           Container(
             child: Image.asset(image),
           ),
-
-
-
           Container(
             margin: EdgeInsets.only(top: 13),
             child: Text(
@@ -397,7 +398,7 @@ class _DashboardState extends State<Dashboard> {
                                   child: Text(
                                     "Rating: ",
                                     style: TextStyle(
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       fontSize: 12,
                                     ),
                                   ),
@@ -406,7 +407,7 @@ class _DashboardState extends State<Dashboard> {
                                   child: Text(
                                     rating,
                                     style: TextStyle(
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       fontSize: 12,
                                     ),
                                   ),
