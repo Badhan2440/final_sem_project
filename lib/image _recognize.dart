@@ -1,6 +1,7 @@
 import 'dart:io';
 
 
+import 'package:final_sem_project/nextpage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_ml_kit/google_ml_kit.dart';
 import 'package:image_picker/image_picker.dart';
@@ -13,6 +14,7 @@ class ImageRecognize extends StatefulWidget {
 }
 
 class _ImageRecognizeState extends State<ImageRecognize> {
+  TextEditingController _t= new TextEditingController();
 
   bool textScanning = false;
 
@@ -43,6 +45,7 @@ class _ImageRecognizeState extends State<ImageRecognize> {
                         color: Colors.grey[300]!,
                       ),
                     if (imageFile != null) Image.file(File(imageFile!.path)),
+
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -117,14 +120,28 @@ class _ImageRecognizeState extends State<ImageRecognize> {
                       ],
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 40,
+                    ),
+                    Container(
+                      child: Text(
+                        "Medicine Name",
+                        style: TextStyle(fontSize: 30),
+                      ),
                     ),
                     Container(
                       child: Text(
                         scannedText,
                         style: TextStyle(fontSize: 20),
                       ),
-                    )
+                    ),
+                    SizedBox(),
+                    ElevatedButton(
+                        onPressed: (){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>NextPage(scannedText, n: scannedText,)));
+                        },
+                        child: Text('ok')
+    )
+
                   ],
                 )),
           )),

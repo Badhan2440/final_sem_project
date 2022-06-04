@@ -19,6 +19,7 @@ class _DashboardState extends State<Dashboard> {
     Size size= MediaQuery.of(context).size;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.redAccent,
       appBar: AppBar(
         elevation: 0.0,
@@ -216,6 +217,7 @@ class _DashboardState extends State<Dashboard> {
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
+
                         fontFamily: "Roboto",
                         fontWeight: FontWeight.w700,
                       ),
